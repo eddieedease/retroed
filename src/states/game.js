@@ -178,7 +178,8 @@ class Game extends Phaser.State {
             if (this.cursors.up.isDown) {
                 updown = true;
                 this.charfacing = 'up';
-                this.game.state.start('ogame',true);
+                // GAMECHANGE
+                //this.game.state.start('ogame',true);
                 //this.mysprite.body.moveUp(300);
                 this.mysprite.body.velocity.y = -300;
                 this.mysprite.animations.play('up');
