@@ -21,10 +21,10 @@ class Boot extends Phaser.State {
       //this.game.scale.scaleMode = Phaser.ScaleManager.SHOW_ALL;
       //this.game.scale.scaleMode = Phaser.ScaleManager.EXACT_FIT;
       this.game.scale.scaleMode = Phaser.ScaleManager.SHOW_ALL;
-      this.game.scale.minWidth =  800;
-      this.game.scale.minHeight = 600;
-      this.game.scale.maxWidth = 800;
-      this.game.scale.maxHeight = 600;
+      this.game.scale.minWidth =  500;
+      this.game.scale.minHeight = 350;
+      this.game.scale.maxWidth = 500;
+      this.game.scale.maxHeight = 350;
       this.game.scale.forceOrientation(true);
       this.game.scale.pageAlignHorizontally = true;
       this.game.scale.setScreenSize(true);

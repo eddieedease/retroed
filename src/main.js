@@ -7,7 +7,7 @@
  import Battle from './states/battle';
 
 
-const game = new Phaser.Game(800, 500, Phaser.AUTO, 'edrogue-game');
+const game = new Phaser.Game(500, 350, Phaser.AUTO, 'edrogue-game');
 
  game.state.add('boot', new Boot());
  game.state.add('game', new Game());

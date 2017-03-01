@@ -21,7 +21,8 @@ class Game extends Phaser.State {
         this.cat = this.game.add.sprite(40, 60, 'cat');
         this.mysprite = this.game.add.sprite(15, 30, 'char');
 
-        this.mysprite.scale.set(0.7, 0.7);
+        this.mysprite.scale.set(0.5, 0.5);
+        this.cat.scale.set(0.8, 0.8);
 
 
         // overlay map layer
@@ -90,7 +91,7 @@ class Game extends Phaser.State {
         this.textbubble.visible = false;
         this.textbubble.anchor.set(0.5);
 
-        this.text = this.game.add.bitmapText(100, 310, 'font', 'Hmmm...  \nShould be really doing something right about now', 30);
+        this.text = this.game.add.bitmapText(25, 250, 'font', 'Hmmm...  \nShould be really doing something right about now', 25);
         this.text.fixedToCamera = true;
         this.text.visible = false;
 
@@ -181,24 +182,24 @@ class Game extends Phaser.State {
                 // GAMECHANGE
                 //this.game.state.start('ogame',true);
                 //this.mysprite.body.moveUp(300);
-                this.mysprite.body.velocity.y = -300;
+                this.mysprite.body.velocity.y = -200;
                 this.mysprite.animations.play('up');
             } else if (this.cursors.down.isDown) {
                 updown = true;
                 this.charfacing = 'down';
                 //this.mysprite.body.moveDown(300);
-                this.mysprite.body.velocity.y = 300;
+                this.mysprite.body.velocity.y = 200;
                 this.mysprite.animations.play('down');
             } else if (this.cursors.left.isDown) {
                 updown = true;
                 this.charfacing = 'left';
-                this.mysprite.body.velocity.x = -300;
+                this.mysprite.body.velocity.x = -200;
                 //this.mysprite.body.velocity.x = -300;
                 this.mysprite.animations.play('left');
             } else if (this.cursors.right.isDown) {
                 updown = true;
                 this.charfacing = 'right';
-                this.mysprite.body.velocity.x = 300;
+                this.mysprite.body.velocity.x = 200;
                 //this.mysprite.body.moveRight(300);
                 this.mysprite.animations.play('right');
             } else {
@@ -286,12 +287,12 @@ class Game extends Phaser.State {
             //this.mysprite.body.setZeroVelocity();
             this.playercanmove = false;
             this.textbubble.x = this.game.camera.x + this.game.camera.width / 2
-            this.textbubble.y = this.game.camera.y + this.game.camera.height + 300,
+            this.textbubble.y = this.game.camera.y + this.game.camera.height + 275,
                 this.textbubble.visible = true;
             this.mysprite.body.velocity.x = 0;
             this.mysprite.body.velocity.y = 0;
             tweendialogue = this.game.add.tween(this.textbubble).to({
-                y: this.game.camera.y + this.game.camera.height / 4 * 3,
+                y: this.game.camera.y + this.game.camera.height / 20 * 19,
                 x: this.game.camera.x + this.game.camera.width / 2
             }, 1000, Phaser.Easing.Bounce.Out, true);
             this.mysprite.animations.stop(null, true);
