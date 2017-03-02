@@ -87,11 +87,11 @@ class Game extends Phaser.State {
         this.game.camera.follow(this.mysprite);
 
 
-        this.textbubble = this.game.add.image(this.game.camera.x + this.game.camera.width / 2, this.game.camera.y + this.game.camera.height + 300, 'textbubble');
+        this.textbubble = this.game.add.image(this.game.camera.x + this.game.camera.width / 2, this.game.camera.y + this.game.camera.height + 230, 'textbubble');
         this.textbubble.visible = false;
         this.textbubble.anchor.set(0.5);
 
-        this.text = this.game.add.bitmapText(25, 250, 'font', 'Hmmm...  \nShould be really doing something right about now', 25);
+        this.text = this.game.add.bitmapText(25, 200, 'font', 'Hmmm...  \nShould be really doing something right about now', 25);
         this.text.fixedToCamera = true;
         this.text.visible = false;
 
@@ -229,23 +229,23 @@ class Game extends Phaser.State {
 
 
 
-        this.game.physics.arcade.moveToObject(this.cat, this.mysprite, 200);
+        this.game.physics.arcade.moveToObject(this.cat, this.mysprite, 100);
         this.game.physics.arcade.overlap(this.cat, this.mysprite, this.catStop, null, this);
 
         //console.log(this.cat.body.velocity);
 
-        if (this.cat.body.velocity.x > 100) {
+        if (this.cat.body.velocity.x > 70) {
             this.catfacing = 'right';
             this.cat.animations.play('right');
-        } else if (this.cat.body.velocity.x < -100) {
+        } else if (this.cat.body.velocity.x < -70) {
 
             this.catfacing = 'left';
             this.cat.animations.play('left');
         }
-        if (this.cat.body.velocity.y > 100) {
+        if (this.cat.body.velocity.y > 70) {
             this.cat.animations.play('down');
             this.catfacing = 'down';
-        } else if (this.cat.body.velocity.y < -100) {
+        } else if (this.cat.body.velocity.y < -70) {
             this.cat.animations.play('up');
             this.catfacing = 'up';
         }
@@ -287,7 +287,7 @@ class Game extends Phaser.State {
             //this.mysprite.body.setZeroVelocity();
             this.playercanmove = false;
             this.textbubble.x = this.game.camera.x + this.game.camera.width / 2
-            this.textbubble.y = this.game.camera.y + this.game.camera.height + 275,
+            this.textbubble.y = this.game.camera.y + this.game.camera.height + 300,
                 this.textbubble.visible = true;
             this.mysprite.body.velocity.x = 0;
             this.mysprite.body.velocity.y = 0;
