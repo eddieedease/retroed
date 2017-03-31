@@ -16,6 +16,7 @@ class Game extends Phaser.State {
         this.map.addTilesetImage('spritesheet', 'tiles');
         this.map.addTilesetImage('spritesheetindoor', 'tilesindoor');
         this.layer = this.map.createLayer('background');
+        this.layer.renderSettings.enableScrollDelta = true;
         this.layer.scale.set(2, 2); //Double the scale
         //this.layer.setScale(zoomlevel)
         this.cat = this.game.add.sprite(40, 60, 'cat');
@@ -27,9 +28,11 @@ class Game extends Phaser.State {
 
         // overlay map layer
         this.layer2 = this.map.createLayer('overlay');
+        this.layer2.renderSettings.enableScrollDelta = true;
         this.layer2.scale.set(2, 2);
 
         this.layer3 = this.map.createLayer('Col');
+        this.layer3.renderSettings.enableScrollDelta = true;
         this.layer3.setScale(2);
         this.layer3.visible = false;
         this.layer.resizeWorld();
