@@ -41,6 +41,7 @@ class Preloader extends Phaser.State {
 
     this.game.load.audio('gunshot','assets/gunshot.wav');
     this.game.load.audio('ding','assets/ding.wav');
+    this.game.load.audio('energy','assets/energy.ogg');
   }
 
   onLoadComplete() {

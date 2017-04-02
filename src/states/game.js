@@ -10,6 +10,7 @@ class Game extends Phaser.State {
     create() {
 
 
+
         this.playercanmove = true;
         this.game.physics.startSystem(Phaser.Physics.ARCADE);
         this.map = this.game.add.tilemap('map');
@@ -45,6 +46,10 @@ class Game extends Phaser.State {
         // SOOOOoooo Collisions are set up, but they won't scale with the layer scaling
         //this.blocks = this.game.physics.p2.convertTilemap(this.map, this.layer3, true, true);
 
+
+         this.music = this.game.add.audio('energy');
+
+        this.music.play();
 
 
         // NOTE what with the collides?
@@ -94,7 +99,7 @@ class Game extends Phaser.State {
         this.textbubble.visible = false;
         this.textbubble.anchor.set(0.5);
 
-        this.text = this.game.add.bitmapText(25, 200, 'font', 'Hmmm...  \nShould be really doing something right about now', 25);
+        this.text = this.game.add.bitmapText(25, 160, 'font', 'Should be really doing something \nright about now', 18);
         this.text.fixedToCamera = true;
         this.text.visible = false;
 
@@ -295,7 +300,7 @@ class Game extends Phaser.State {
             this.mysprite.body.velocity.x = 0;
             this.mysprite.body.velocity.y = 0;
             tweendialogue = this.game.add.tween(this.textbubble).to({
-                y: this.game.camera.y + this.game.camera.height / 20 * 19,
+                y: this.game.camera.y + 250,
                 x: this.game.camera.x + this.game.camera.width / 2
             }, 1000, Phaser.Easing.Bounce.Out, true);
             this.mysprite.animations.stop(null, true);

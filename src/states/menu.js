@@ -11,16 +11,16 @@ class Menu extends Phaser.State {
     this.background.width = this.game.world.width;
 
     //add some fancy transition effects
-    this.ready = this.game.add.sprite(this.game.world.centerX,250,'text_ready');
+    this.ready = this.game.add.sprite(this.game.world.centerX,150,'text_ready');
     this.ready.anchor.set(0.5,0.5);
     this.ready.visible=false;
-    this.go = this.game.add.sprite(this.game.world.centerX,250,'text_go');
+    this.go = this.game.add.sprite(this.game.world.centerX,150,'text_go');
     this.go.anchor.set(0.5,0.5);
     this.go.visible =false;
 
     //add intro text
-    this.menuText = this.add.text(this.game.world.centerX,250, 'Click to enjoy life', {
-      font: '42px Arial', fill: '#ffffff', align: 'center'
+    this.menuText = this.add.text(this.game.world.centerX,150, 'Click to enjoy life', {
+      font: '20px Arial', fill: '#ffffff', align: 'center'
     });
     this.menuText.anchor.set(0.5);
 
